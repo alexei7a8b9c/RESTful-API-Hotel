@@ -5,7 +5,7 @@ import com.example.hotelapi.dto.request.HotelCreateRequest;
 import com.example.hotelapi.dto.response.HotelDetailResponse;
 import com.example.hotelapi.dto.response.HotelSummaryResponse;
 import com.example.hotelapi.exception.ResourceNotFoundException;
-import com.example.hotelapi.model.Amenity;
+import com.example.hotelapi.model.Amenity;  // Добавьте этот импорт
 import com.example.hotelapi.model.Hotel;
 import com.example.hotelapi.repository.AmenityRepository;
 import com.example.hotelapi.repository.HotelRepository;

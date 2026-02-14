@@ -4,6 +4,8 @@ import com.example.hotelapi.dto.request.*;
 import com.example.hotelapi.dto.response.*;
 import com.example.hotelapi.model.*;
 import org.mapstruct.*;
+
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
@@ -23,7 +25,7 @@ public interface HotelMapper {
     @Mapping(target = "phone", source = "contacts.phone")
     HotelSummaryResponse toSummaryResponse(Hotel hotel);
 
-    @Mapping(target = "amenities", expression = "java(hotel.getAmenities().stream().map(Amenity::getName).collect(java.util.stream.Collectors.toList()))")
+    @Mapping(target = "amenities", expression = "java(mapAmenities(hotel))")
     HotelDetailResponse toDetailResponse(Hotel hotel);
 
     AddressResponse toResponse(Address address);
@@ -42,5 +44,12 @@ public interface HotelMapper {
                 addr.getPostCode(),
                 addr.getCountry()
         );
+    }
+
+    default List<String> mapAmenities(Hotel hotel) {
+        if (hotel.getAmenities() == null) return java.util.Collections.emptyList();
+        return hotel.getAmenities().stream()
+                .map(Amenity::getName)
+                .collect(Collectors.toList());
     }
 }

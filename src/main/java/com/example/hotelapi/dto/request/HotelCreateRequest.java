@@ -15,7 +15,8 @@ public class HotelCreateRequest {
     @NotBlank(message = "Hotel name is required")
     private String name;
 
-    private String description;
+    @Builder.Default
+    private String description = "";
 
     @NotBlank(message = "Brand is required")
     private String brand;

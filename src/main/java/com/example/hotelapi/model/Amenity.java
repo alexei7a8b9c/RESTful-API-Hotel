@@ -23,5 +23,6 @@ public class Amenity {
     private String name;
 
     @ManyToMany(mappedBy = "amenities")
+    @Builder.Default
     private Set<Hotel> hotels = new HashSet<>();
 }
