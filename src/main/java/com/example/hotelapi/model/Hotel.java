@@ -30,9 +30,17 @@ public class Hotel {
     private Address address;
 
     @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "phone", column = @Column(name = "phone")),
+            @AttributeOverride(name = "email", column = @Column(name = "email"))
+    })
     private Contacts contacts;
 
     @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "checkIn", column = @Column(name = "check_in")),
+            @AttributeOverride(name = "checkOut", column = @Column(name = "check_out"))
+    })
     private ArrivalTime arrivalTime;
 
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
