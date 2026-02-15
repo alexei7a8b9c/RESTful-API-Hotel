@@ -1,0 +1,946 @@
+{
+  "info": {
+    "_postman_id": "61114c8b-3669-46e2-a2e0-bcb935300832",
+    "name": "Hotel API",
+    "description": "RESTful API for hotel management\n\nContact Support:\n Name: Your Name\n Email: your.email@example.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "48632170"
+  },
+  "item": [
+    {
+      "name": "property-view",
+      "item": [
+        {
+          "name": "hotels",
+          "item": [
+            {
+              "name": "{id}",
+              "item": [
+                {
+                  "name": "amenities",
+                  "item": [
+                    {
+                      "name": "Add amenities to hotel",
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "[\n  \"string\",\n  \"string\"\n]",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/property-view/hotels/:id/amenities",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "property-view",
+                            "hotels",
+                            ":id",
+                            "amenities"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "9521",
+                              "description": "Hotel ID"
+                            }
+                          ]
+                        },
+                        "description": "Adds a list of amenities to a specific hotel"
+                      },
+                      "response": [
+                        {
+                          "name": "Amenities successfully added",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "[\n  \"string\",\n  \"string\"\n]",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/property-view/hotels/:id/amenities",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "property-view",
+                                "hotels",
+                                ":id",
+                                "amenities"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "9521",
+                                  "description": "Hotel ID"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        },
+                        {
+                          "name": "Invalid input",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "[\n  \"string\",\n  \"string\"\n]",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/property-view/hotels/:id/amenities",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "property-view",
+                                "hotels",
+                                ":id",
+                                "amenities"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "9521",
+                                  "description": "Hotel ID"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        },
+                        {
+                          "name": "Hotel not found",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "[\n  \"string\",\n  \"string\"\n]",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/property-view/hotels/:id/amenities",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "property-view",
+                                "hotels",
+                                ":id",
+                                "amenities"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "9521",
+                                  "description": "Hotel ID"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        },
+                        {
+                          "name": "Internal server error",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "[\n  \"string\",\n  \"string\"\n]",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/property-view/hotels/:id/amenities",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "property-view",
+                                "hotels",
+                                ":id",
+                                "amenities"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "9521",
+                                  "description": "Hotel ID"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Get hotel by ID",
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/property-view/hotels/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "property-view",
+                        "hotels",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "9521",
+                          "description": "Hotel ID"
+                        }
+                      ]
+                    },
+                    "description": "Returns detailed information about a specific hotel"
+                  },
+                  "response": [
+                    {
+                      "name": "Successfully retrieved hotel",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/property-view/hotels/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "property-view",
+                            "hotels",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "9521",
+                              "description": "Hotel ID"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"id\": 394,\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"brand\": \"string\",\n  \"address\": {\n    \"houseNumber\": 8091,\n    \"street\": \"string\",\n    \"city\": \"string\",\n    \"country\": \"string\",\n    \"postCode\": \"string\"\n  },\n  \"contacts\": {\n    \"phone\": \"string\",\n    \"email\": \"string\"\n  },\n  \"arrivalTime\": {\n    \"checkIn\": \"string\",\n    \"checkOut\": \"string\"\n  },\n  \"amenities\": [\n    \"string\",\n    \"string\"\n  ]\n}"
+                    },
+                    {
+                      "name": "Hotel not found",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/property-view/hotels/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "property-view",
+                            "hotels",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "9521",
+                              "description": "Hotel ID"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"id\": 394,\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"brand\": \"string\",\n  \"address\": {\n    \"houseNumber\": 8091,\n    \"street\": \"string\",\n    \"city\": \"string\",\n    \"country\": \"string\",\n    \"postCode\": \"string\"\n  },\n  \"contacts\": {\n    \"phone\": \"string\",\n    \"email\": \"string\"\n  },\n  \"arrivalTime\": {\n    \"checkIn\": \"string\",\n    \"checkOut\": \"string\"\n  },\n  \"amenities\": [\n    \"string\",\n    \"string\"\n  ]\n}"
+                    },
+                    {
+                      "name": "Internal server error",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/property-view/hotels/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "property-view",
+                            "hotels",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "9521",
+                              "description": "Hotel ID"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"id\": 394,\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"brand\": \"string\",\n  \"address\": {\n    \"houseNumber\": 8091,\n    \"street\": \"string\",\n    \"city\": \"string\",\n    \"country\": \"string\",\n    \"postCode\": \"string\"\n  },\n  \"contacts\": {\n    \"phone\": \"string\",\n    \"email\": \"string\"\n  },\n  \"arrivalTime\": {\n    \"checkIn\": \"string\",\n    \"checkOut\": \"string\"\n  },\n  \"amenities\": [\n    \"string\",\n    \"string\"\n  ]\n}"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Get all hotels",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/property-view/hotels",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "property-view",
+                    "hotels"
+                  ]
+                },
+                "description": "Returns a list of all hotels with brief information"
+              },
+              "response": [
+                {
+                  "name": "Successfully retrieved list",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/property-view/hotels",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "property-view",
+                        "hotels"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n  {\n    \"id\": 8218,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"address\": \"string\",\n    \"phone\": \"string\"\n  },\n  {\n    \"id\": 9297,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"address\": \"string\",\n    \"phone\": \"string\"\n  }\n]"
+                },
+                {
+                  "name": "Internal server error",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/property-view/hotels",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "property-view",
+                        "hotels"
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n  {\n    \"id\": 8218,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"address\": \"string\",\n    \"phone\": \"string\"\n  },\n  {\n    \"id\": 9297,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"address\": \"string\",\n    \"phone\": \"string\"\n  }\n]"
+                }
+              ]
+            },
+            {
+              "name": "Create a new hotel",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"address\": {\n    \"city\": \"string\",\n    \"country\": \"string\",\n    \"houseNumber\": 9600,\n    \"postCode\": \"string\",\n    \"street\": \"string\"\n  },\n  \"arrivalTime\": {\n    \"checkIn\": \"21:59\",\n    \"checkOut\": \"21:55\"\n  },\n  \"brand\": \"string\",\n  \"contacts\": {\n    \"email\": \"string\",\n    \"phone\": \"string\"\n  },\n  \"name\": \"string\",\n  \"description\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/property-view/hotels",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "property-view",
+                    "hotels"
+                  ]
+                },
+                "description": "Creates a new hotel and returns its summary information"
+              },
+              "response": [
+                {
+                  "name": "Hotel successfully created",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"address\": {\n    \"city\": \"string\",\n    \"country\": \"string\",\n    \"houseNumber\": 9600,\n    \"postCode\": \"string\",\n    \"street\": \"string\"\n  },\n  \"arrivalTime\": {\n    \"checkIn\": \"21:59\",\n    \"checkOut\": \"21:55\"\n  },\n  \"brand\": \"string\",\n  \"contacts\": {\n    \"email\": \"string\",\n    \"phone\": \"string\"\n  },\n  \"name\": \"string\",\n  \"description\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/property-view/hotels",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "property-view",
+                        "hotels"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"id\": 6861,\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"address\": \"string\",\n  \"phone\": \"string\"\n}"
+                },
+                {
+                  "name": "Invalid input",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"address\": {\n    \"city\": \"string\",\n    \"country\": \"string\",\n    \"houseNumber\": 9600,\n    \"postCode\": \"string\",\n    \"street\": \"string\"\n  },\n  \"arrivalTime\": {\n    \"checkIn\": \"21:59\",\n    \"checkOut\": \"21:55\"\n  },\n  \"brand\": \"string\",\n  \"contacts\": {\n    \"email\": \"string\",\n    \"phone\": \"string\"\n  },\n  \"name\": \"string\",\n  \"description\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/property-view/hotels",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "property-view",
+                        "hotels"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"id\": 6861,\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"address\": \"string\",\n  \"phone\": \"string\"\n}"
+                },
+                {
+                  "name": "Internal server error",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"address\": {\n    \"city\": \"string\",\n    \"country\": \"string\",\n    \"houseNumber\": 9600,\n    \"postCode\": \"string\",\n    \"street\": \"string\"\n  },\n  \"arrivalTime\": {\n    \"checkIn\": \"21:59\",\n    \"checkOut\": \"21:55\"\n  },\n  \"brand\": \"string\",\n  \"contacts\": {\n    \"email\": \"string\",\n    \"phone\": \"string\"\n  },\n  \"name\": \"string\",\n  \"description\": \"string\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/property-view/hotels",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "property-view",
+                        "hotels"
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"id\": 6861,\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"address\": \"string\",\n  \"phone\": \"string\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "search",
+          "item": [
+            {
+              "name": "Search hotels",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/property-view/search?name=string&brand=string&city=string&country=string&amenities=string&amenities=string",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "property-view",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "string"
+                    },
+                    {
+                      "key": "brand",
+                      "value": "string"
+                    },
+                    {
+                      "key": "city",
+                      "value": "string"
+                    },
+                    {
+                      "key": "country",
+                      "value": "string"
+                    },
+                    {
+                      "key": "amenities",
+                      "value": "string"
+                    },
+                    {
+                      "key": "amenities",
+                      "value": "string"
+                    }
+                  ]
+                },
+                "description": "Search hotels by various parameters"
+              },
+              "response": [
+                {
+                  "name": "Successfully retrieved search results",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/property-view/search?name=string&brand=string&city=string&country=string&amenities=string",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "property-view",
+                        "search"
+                      ],
+                      "query": [
+                        {
+                          "key": "name",
+                          "value": "string"
+                        },
+                        {
+                          "key": "brand",
+                          "value": "string"
+                        },
+                        {
+                          "key": "city",
+                          "value": "string"
+                        },
+                        {
+                          "key": "country",
+                          "value": "string"
+                        },
+                        {
+                          "key": "amenities",
+                          "value": "string"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n  {\n    \"id\": 8218,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"address\": \"string\",\n    \"phone\": \"string\"\n  },\n  {\n    \"id\": 9297,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"address\": \"string\",\n    \"phone\": \"string\"\n  }\n]"
+                },
+                {
+                  "name": "Internal server error",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/property-view/search?name=string&brand=string&city=string&country=string&amenities=string",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "property-view",
+                        "search"
+                      ],
+                      "query": [
+                        {
+                          "key": "name",
+                          "value": "string"
+                        },
+                        {
+                          "key": "brand",
+                          "value": "string"
+                        },
+                        {
+                          "key": "city",
+                          "value": "string"
+                        },
+                        {
+                          "key": "country",
+                          "value": "string"
+                        },
+                        {
+                          "key": "amenities",
+                          "value": "string"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "text",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "[\n  {\n    \"id\": 8218,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"address\": \"string\",\n    \"phone\": \"string\"\n  },\n  {\n    \"id\": 9297,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"address\": \"string\",\n    \"phone\": \"string\"\n  }\n]"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "histogram",
+          "item": [
+            {
+              "name": "{param}",
+              "item": [
+                {
+                  "name": "Get histogram",
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/property-view/histogram/:param",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "property-view",
+                        "histogram",
+                        ":param"
+                      ],
+                      "variable": [
+                        {
+                          "key": "param",
+                          "value": "string",
+                          "description": "Parameter to group by (brand, city, country, amenities)"
+                        }
+                      ]
+                    },
+                    "description": "Returns a histogram of hotels grouped by the specified parameter"
+                  },
+                  "response": [
+                    {
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/property-view/histogram/:param",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "property-view",
+                            "histogram",
+                            ":param"
+                          ],
+                          "variable": [
+                            {
+                              "key": "param",
+                              "value": "string",
+                              "description": "Parameter to group by (brand, city, country, amenities)"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "cookie": [],
+                      "body": "{\n  \"key_0\": 5124\n}"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8092"
+    }
+  ]
+}
