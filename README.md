@@ -50,7 +50,7 @@ All endpoints have the common prefix: `/property-view`
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/hotel-api.git
+git clone https://github.com/alexei7a8b9c/RESTful-API-Hotel.git
 cd hotel-api
 
 # Build the project
@@ -66,8 +66,6 @@ Application: http://localhost:8092
 Swagger UI: http://localhost:8092/swagger-ui.html
 
 OpenAPI Docs: http://localhost:8092/api-docs
-
-H2 Console: http://localhost:8092/h2-console
 
 JDBC URL: jdbc:h2:mem:hoteldb
 
@@ -315,41 +313,3 @@ spring:
     password: password
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-Testing
-Run tests with Maven:
-
-bash
-mvn test
-The project includes:
-
-Unit tests for services
-
-Web layer tests for controllers
-
-Integration tests (to be added)
-
-Error Handling
-The API returns consistent error responses:
-
-json
-{
-  "timestamp": "2026-02-15T13:30:00",
-  "status": 404,
-  "error": "Not Found",
-  "message": "Hotel not found with id: 999",
-  "path": "/property-view/hotels/999"
-}
-Validation errors:
-
-json
-{
-  "timestamp": "2026-02-15T13:30:00",
-  "status": 400,
-  "error": "Bad Request",
-  "message": "Validation failed",
-  "errors": {
-    "name": "Hotel name is required",
-    "brand": "Brand is required"
-  },
-  "path": "/property-view/hotels"
-}
