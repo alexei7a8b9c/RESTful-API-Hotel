@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -21,7 +22,7 @@ public interface HotelRepository extends JpaRepository<Hotel, Long> {
     Optional<Hotel> findById(Long id);
 
     @Query("SELECT DISTINCT h FROM Hotel h " +
-            "LEFT JOIN FETCH h.amenities a " +
+            "LEFT JOIN h.amenities a " +
             "WHERE (:name IS NULL OR LOWER(h.name) LIKE LOWER(CONCAT('%', :name, '%'))) " +
             "AND (:brand IS NULL OR LOWER(h.brand) LIKE LOWER(CONCAT('%', :brand, '%'))) " +
             "AND (:city IS NULL OR LOWER(h.address.city) LIKE LOWER(CONCAT('%', :city, '%'))) " +

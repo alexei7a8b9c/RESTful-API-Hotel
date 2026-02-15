@@ -53,6 +53,22 @@
         <addPrimaryKey tableName="hotel_amenities"
                        columnNames="hotel_id, amenity_id"
                        constraintName="pk_hotel_amenities"/>
+
+        <createIndex tableName="hotels" indexName="idx_hotel_city">
+            <column name="city"/>
+        </createIndex>
+
+        <createIndex tableName="hotels" indexName="idx_hotel_country">
+            <column name="country"/>
+        </createIndex>
+
+        <createIndex tableName="hotels" indexName="idx_hotel_brand">
+            <column name="brand"/>
+        </createIndex>
+
+        <createIndex tableName="hotels" indexName="idx_hotel_name">
+            <column name="name"/>
+        </createIndex>
     </changeSet>
 
     <changeSet id="2" author="system">

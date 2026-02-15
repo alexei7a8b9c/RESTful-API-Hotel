@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 @RestController
 @RequestMapping("/property-view")
@@ -16,12 +17,18 @@ import java.util.Map;
 public class HistogramController {
 
     private final HistogramService histogramService;
+    private static final Pattern VALID_PARAM_PATTERN = Pattern.compile("^(brand|city|country|amenities)$", Pattern.CASE_INSENSITIVE);
 
     @GetMapping("/histogram/{param}")
     @Operation(summary = "Get histogram", description = "Returns a histogram of hotels grouped by the specified parameter")
     public ResponseEntity<Map<String, Long>> getHistogram(
             @Parameter(description = "Parameter to group by (brand, city, country, amenities)", required = true)
             @PathVariable String param) {
-        return ResponseEntity.ok(histogramService.getHistogram(param));
+
+        if (!VALID_PARAM_PATTERN.matcher(param).matches()) {
+            throw new IllegalArgumentException("Invalid histogram parameter: " + param + ". Allowed values: brand, city, country, amenities");
+        }
+
+        return ResponseEntity.ok(histogramService.getHistogram(param.toLowerCase()));
     }
 }

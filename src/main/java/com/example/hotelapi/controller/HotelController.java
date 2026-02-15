@@ -58,7 +58,7 @@ public class HotelController {
             @RequestParam(required = false) String brand,
             @RequestParam(required = false) String city,
             @RequestParam(required = false) String country,
-            @RequestParam(required = false) String amenities) {
+            @RequestParam(required = false) List<String> amenities) {
         return ResponseEntity.ok(hotelService.searchHotels(name, brand, city, country, amenities));
     }
 

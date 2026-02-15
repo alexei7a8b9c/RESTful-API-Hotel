@@ -1,18 +1,19 @@
 package com.example.hotelapi.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "hotels")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Hotel {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -30,24 +31,19 @@ public class Hotel {
     private Address address;
 
     @Embedded
-    @AttributeOverrides({
-            @AttributeOverride(name = "phone", column = @Column(name = "phone")),
-            @AttributeOverride(name = "email", column = @Column(name = "email"))
-    })
     private Contacts contacts;
 
     @Embedded
-    @AttributeOverrides({
-            @AttributeOverride(name = "checkIn", column = @Column(name = "check_in")),
-            @AttributeOverride(name = "checkOut", column = @Column(name = "check_out"))
-    })
     private ArrivalTime arrivalTime;
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
     @JoinTable(
             name = "hotel_amenities",
             joinColumns = @JoinColumn(name = "hotel_id"),
             inverseJoinColumns = @JoinColumn(name = "amenity_id")
     )
+    @Builder.Default
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private Set<Amenity> amenities = new HashSet<>();
 }
